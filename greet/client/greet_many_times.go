@@ -10,7 +10,7 @@ import (
 
 func doGreetManyTimes(c pb.GreetServiceClient) {
 
-	log.Println("deGreetManyTimes was involved")
+	log.Println("doGreetManyTimes was involved")
 
 	req := &pb.GreetRequest{
 		FirstName: "Sunil ",
