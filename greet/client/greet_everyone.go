@@ -25,7 +25,7 @@ func doGreetEveryOne(c pb.GreetServiceClient) {
 		log.Printf("Error while invoking GreetEveryOne from client ..")
 	}
 
-	ch := make(chan struct{})
+	ch := make(chan interface{})
 
 	go func() {
 		for _, req := range reqs {
@@ -38,7 +38,6 @@ func doGreetEveryOne(c pb.GreetServiceClient) {
 			log.Printf("Send Msg %s \n", req.FirstName)
 
 			time.Sleep(1 * time.Second)
-
 		}
 		stream.CloseSend()
 	}()
