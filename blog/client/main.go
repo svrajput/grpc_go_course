@@ -21,7 +21,10 @@ func main() {
 	c := pb.NewBlogServiceClient(conn)
 
 	id := createBlog(c)
+	//log.Printf("New blog id %s", id)
 
-	log.Printf("New blog id %s", id)
+	b := readBlog(c, id)
+
+	log.Printf("Blog content %s", b)
 
 }
